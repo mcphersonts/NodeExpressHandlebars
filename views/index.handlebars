@@ -1,8 +1,30 @@
 <div class="container">
     <div class="row">
-        <div class="col-sm-12">
-            <img src="/assets/img/burger.png" alt="burger"/>
-            <p> Eat Da Burger! </p>
+        <div class="col-sm-12 text-center">
+            <img src="/assets/img/burger.png" alt="burger" />
+            <h1> Eat Da Burger! </h1>
         </div>
+        <div class="col-sm-6 text-center">
+            <p>To be devoured</p>
+            <div class="row">
+                {{#each burgers}}
+                {{#unless this.devoured}}
+                <div class="col-sm-8 text-center">
+                    <pre>{{this.id}}. {{this.burger_name}}
+                    </pre>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <button class="btn btn-primary">
+                        devour
+                    </button>
+                </div>
+                {{/unless}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-sm-6 text-center">
+            <p>To be devoured</p>
+        </div>
+
     </div>
 </div>
